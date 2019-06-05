@@ -1,0 +1,6 @@
+/vendor
+/output
+/log
+/config/config.php
+.php_cs.cache
+composer.lock
