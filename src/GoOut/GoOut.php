@@ -6,7 +6,7 @@ use LuisMateos92\Fichar\Config;
 use GuzzleHttp\Client;
 use Monolog\Logger;
 
-class ComeIn
+class GoOut
 {
 	private $logger;
 	private $config;
@@ -25,14 +25,14 @@ class ComeIn
 	public function goOut()
 	{
 		$this->logger->info('Cerrar sesión...');
-		$this->GetGoOut();
+		$this->getGoOut();
 		$this->logger->info('Sesión cerrada.');
 	}
 
 	/**
 	 * Send request to go out.
 	 */
-	private function GetGoOut()
+	private function getGoOut()
 	{
 		$this->guzzle->request(
 			'GET',
