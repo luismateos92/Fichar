@@ -38,7 +38,7 @@ class ComeIn
 	 */
 	private function sendPostLogin()
 	{
-		$response = $this->guzzle->request(
+		$this->guzzle->request(
 			'POST',
 			$this->config->get('url_post'),
 			['form_params' => $this->config->get('user')]
@@ -52,7 +52,7 @@ class ComeIn
 	 */
 	private function getComeIn()
 	{
-		$response = $this->guzzle->request(
+		$this->guzzle->request(
 			'GET',
 			$this->config->get('url_login')
 		);
@@ -65,7 +65,7 @@ class ComeIn
 	 */
 	private function getPresencia()
 	{
-		$response = $this->guzzle->request(
+		$this->guzzle->request(
 			'GET',
 			$this->config->get('url_init')
 		);

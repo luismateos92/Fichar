@@ -34,7 +34,7 @@ class ComeIn
 	 */
 	private function GetGoOut()
 	{
-		$response = $this->guzzle->request(
+		$this->guzzle->request(
 			'GET',
 			$this->config->get('url_out')
 		);

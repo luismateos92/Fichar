@@ -5,6 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use LuisMateos92\Fichar\Config;
 use LuisMateos92\Fichar\Execute;
 use LuisMateos92\Fichar\ComeIn\ComeIn;
+use LuisMateos92\Fichar\GoOut\GoOut;
 use GuzzleHttp\Client;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -19,6 +20,11 @@ $guzzle = new Client(['cookies' => true]);
 $execute = new Execute(
 	$logger,
 	new ComeIn(
+		$logger,
+		$config,
+		$guzzle
+	),
+	new GoOut(
 		$logger,
 		$config,
 		$guzzle
